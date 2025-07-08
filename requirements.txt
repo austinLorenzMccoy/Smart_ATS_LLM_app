@@ -1,9 +1,9 @@
 # API
-fastapi==0.110.0
-uvicorn==0.27.1
-python-multipart==0.0.9
-# Use an older version of pydantic that doesn't require Rust compilation
-pydantic==2.4.2
+fastapi==0.95.2
+uvicorn==0.22.0
+python-multipart==0.0.6
+# Use a much older version of pydantic without Rust dependencies
+pydantic==1.10.8
 
 # Core dependencies
 PyPDF2==3.0.1
@@ -13,9 +13,9 @@ python-dotenv==1.0.0
 # Testing
 pytest==7.4.0
 pytest-mock==3.11.1
-httpx==0.27.0
+httpx==0.24.1
 
-# Add explicit dependencies to avoid Rust compilation
-typing-extensions>=4.8.0
-annotated-types>=0.4.0
-pydantic-core==2.10.1
+# Avoid any dependencies that might require Rust compilation
+typing-extensions==4.7.1
+annotated-types==0.5.0
+# No pydantic-core as it requires Rust

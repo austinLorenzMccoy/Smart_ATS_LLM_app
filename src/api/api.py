@@ -34,8 +34,17 @@ configure_gemini(config["api_key"])
 # Define response models
 class ATSResponse(BaseModel):
     jd_match: str
-    missing_keywords: list[str]
+    missing_keywords: list
     profile_summary: str
+    
+    class Config:
+        schema_extra = {
+            "example": {
+                "jd_match": "85%",
+                "missing_keywords": ["Python", "Docker", "AWS"],
+                "profile_summary": "Strong candidate with relevant experience."
+            }
+        }
 
 @app.get("/")
 async def root():
