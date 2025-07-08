@@ -18,7 +18,8 @@ httpx==0.20.0
 # Avoid any dependencies that might require Rust compilation
 typing-extensions==4.0.1
 annotated-types==0.3.0
-starlette==0.17.1
+# Use starlette version compatible with FastAPI 0.70.0
+starlette==0.16.0
 
 # Explicitly specify these to avoid newer versions that might require Rust
 idna==3.3
