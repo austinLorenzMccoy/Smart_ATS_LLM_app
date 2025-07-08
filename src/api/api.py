@@ -34,10 +34,11 @@ configure_gemini(config["api_key"])
 # Define response models
 class ATSResponse(BaseModel):
     jd_match: str
-    missing_keywords: list
+    missing_keywords: list = []  # Use default empty list
     profile_summary: str
     
     class Config:
+        # Use older pydantic config style
         schema_extra = {
             "example": {
                 "jd_match": "85%",
@@ -45,6 +46,8 @@ class ATSResponse(BaseModel):
                 "profile_summary": "Strong candidate with relevant experience."
             }
         }
+        # Ensure extra attributes are allowed
+        extra = "allow"
 
 @app.get("/")
 async def root():
