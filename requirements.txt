@@ -1,9 +1,9 @@
-# API
-fastapi==0.95.2
-uvicorn==0.22.0
-python-multipart==0.0.6
+# API - using older versions that don't require Rust and are compatible with Python 3.8
+fastapi==0.78.0
+uvicorn==0.17.6
+python-multipart==0.0.5
 # Use a much older version of pydantic without Rust dependencies
-pydantic==1.10.8
+pydantic==1.9.2
 
 # Core dependencies
 PyPDF2==3.0.1
@@ -11,11 +11,16 @@ google-generativeai==0.3.2
 python-dotenv==1.0.0
 
 # Testing
-pytest==7.4.0
-pytest-mock==3.11.1
-httpx==0.24.1
+pytest==7.0.1
+pytest-mock==3.10.0
+httpx==0.22.0
 
 # Avoid any dependencies that might require Rust compilation
-typing-extensions==4.7.1
-annotated-types==0.5.0
-# No pydantic-core as it requires Rust
+typing-extensions==4.3.0
+annotated-types==0.4.0
+starlette==0.19.1
+
+# Explicitly specify these to avoid newer versions that might require Rust
+idna==3.3
+requests==2.27.1
+urllib3==1.26.9

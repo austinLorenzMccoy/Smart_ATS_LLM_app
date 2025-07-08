@@ -1,11 +1,9 @@
 services:
   - type: web
     name: smart-ats-api
-    env: python
-    buildCommand: ./build.sh
-    startCommand: ./start.sh
+    env: docker
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: GOOGLE_API_KEY
         sync: false
     plan: free
-    pythonVersion: 3.8
