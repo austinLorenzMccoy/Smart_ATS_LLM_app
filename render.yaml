@@ -1,13 +1,10 @@
 services:
   - type: web
-    name: smart-ats-api-test
-    env: python
+    name: smart-ats-api-docker
+    env: docker
     region: oregon
-    buildCommand: echo "No build needed for pure Python app"
-    startCommand: python app.py
+    plan: free
+    healthCheckPath: /
     envVars:
       - key: PORT
         value: 10000
-    plan: free
-    pythonVersion: 3.8.17
-    healthCheckPath: /

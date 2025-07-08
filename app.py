@@ -20,7 +20,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
         }
         self.wfile.write(json.dumps(response).encode())
 
-def run_server(port=9090):
+def run_server(port=10000):
     server_address = ('', port)
     httpd = HTTPServer(server_address, SimpleHandler)
     print(f"Starting server on port {port}")
@@ -29,5 +29,5 @@ def run_server(port=9090):
     httpd.serve_forever()
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 9090))
+    port = int(os.environ.get("PORT", 10000))
     run_server(port)
