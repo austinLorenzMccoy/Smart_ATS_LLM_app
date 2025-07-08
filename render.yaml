@@ -1,14 +1,12 @@
 services:
   - type: web
-    name: smart-ats-api
+    name: smart-ats-api-test
     env: python
     region: oregon
-    buildCommand: |
-      pip install --upgrade pip
-      pip install "fastapi<0.69.0" "uvicorn<0.15.0" "pydantic<1.9.0" "starlette<0.15.0" google-generativeai python-multipart PyPDF2 python-dotenv
-    startCommand: python simple_app.py $PORT
+    buildCommand: echo "No build needed for pure Python app"
+    startCommand: python app.py
     envVars:
-      - key: GOOGLE_API_KEY
-        sync: false
+      - key: PORT
+        value: 10000
     plan: free
     pythonVersion: 3.8.17
