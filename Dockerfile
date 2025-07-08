@@ -40,5 +40,5 @@ USER appuser
 # Expose the port the app runs on
 EXPOSE 8000
 
-# Command to run the application
-CMD ["uvicorn", "src.api.api:app", "--host", "0.0.0.0", "--port", "8000"]
+# Command to run the application - use environment variable PORT if available, otherwise default to 8000
+CMD ["sh", "-c", "uvicorn src.api.api:app --host 0.0.0.0 --port ${PORT:-8000}"]
