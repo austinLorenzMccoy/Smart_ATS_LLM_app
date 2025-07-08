@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: smart-ats-api-docker
+    name: smart-ats-minimal
     env: docker
     region: oregon
     plan: free
