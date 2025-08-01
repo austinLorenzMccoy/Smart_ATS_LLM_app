@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Austin's Smart ATS API
+# 🚀 Smart ATS API
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110.0-009688)](https://fastapi.tiangolo.com/)
