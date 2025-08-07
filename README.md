@@ -14,7 +14,7 @@
 
 </div>
 
-Austin's Smart ATS API is a powerful backend service designed to evaluate resumes against job descriptions using Google's Generative AI. The API simulates an Application Tracking System (ATS) and provides comprehensive insights into how well a resume aligns with a job description by analyzing keywords, content relevance, and generating tailored improvement recommendations.
+Smart ATS API is a powerful backend service designed to evaluate resumes against job descriptions using Google's Generative AI. The API simulates an Application Tracking System (ATS) and provides comprehensive insights into how well a resume aligns with a job description by analyzing keywords, content relevance, and generating tailored improvement recommendations.
 
 ## ✨ Features
 
