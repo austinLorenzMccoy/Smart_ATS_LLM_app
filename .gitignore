@@ -26,13 +26,61 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# Virtual environment
+# Virtual environment & dependency directories
 venv/
 ENV/
 env/
 env.bak/
 venv.bak/
 atsLLMapp2_env/
+venv-test/
+.venv/
+.python-version
+
+# Node / frontend artifacts
+frontend/smart-ats-ui/node_modules/
+frontend/smart-ats-ui/.next/
+frontend/smart-ats-ui/.turbo/
+frontend/smart-ats-ui/.pnpm-store/
+frontend/smart-ats-ui/pnpm-lock.yaml.backup
+frontend/smart-ats-ui/out/
+frontend/smart-ats-ui/.vercel/
+
+# Build / dist outputs
+docs/
+frontend/dist/
+frontend/build/
+frontend/.cache/
+backend/dist/
+
+# IDE/project files
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+
+# Environment & credentials
+.env
+.env.*
+backend/.env
+frontend/.env.local
+frontend/.env*
+
+# Logs & reports
+*.log
+logs/
+frontend/smart-ats-ui/.next-tmp/
+
+# Coverage / testing
+coverage/
+frontend/coverage/
+
+# License-sensitive
+LICENSE-commercial.pdf
+
+# Misc
+*.sqlite3
+tmp/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

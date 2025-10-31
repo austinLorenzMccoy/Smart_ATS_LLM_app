@@ -1,276 +1,224 @@
 <div align="center">
 
+<<<<<<< HEAD
 # 🚀 Smart ATS API
+=======
+# 🚀 AI Career Copilot
+>>>>>>> 836fe3c (Replace legacy backend with AI Career Copilot stack)
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.110.0-009688)](https://fastapi.tiangolo.com/)
-[![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-0.3.2-4285F4)](https://ai.google.dev/)
-[![pytest](https://img.shields.io/badge/pytest-7.4.0-yellow)](https://docs.pytest.org/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688)](https://fastapi.tiangolo.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-15.2-black)](https://nextjs.org/)
+[![PNPM](https://img.shields.io/badge/PNPM-9+-f69220)](https://pnpm.io/)
+[![Google Generative AI](https://img.shields.io/badge/Gemini-API-4285F4)](https://ai.google.dev/)
+[![License](https://img.shields.io/badge/License-Commercial-orange)](./LICENSE-commercial)
 
-<img src="https://img.icons8.com/color/96/000000/resume.png" alt="Smart ATS Logo" width="120"/>
+<img src="https://img.icons8.com/color/96/000000/resume.png" alt="AI Career Copilot Logo" width="120"/>
 
-**Supercharge your job applications with AI-powered resume analysis API**
+**Full-stack platform for AI-driven resume intelligence, career coaching, and job-market insights**
 
 </div>
 
+<<<<<<< HEAD
 Smart ATS API is a powerful backend service designed to evaluate resumes against job descriptions using Google's Generative AI. The API simulates an Application Tracking System (ATS) and provides comprehensive insights into how well a resume aligns with a job description by analyzing keywords, content relevance, and generating tailored improvement recommendations.
+=======
+AI Career Copilot combines a FastAPI backend with a Next.js frontend to deliver resume rewriting, skill-gap analysis, role-fit scoring, career coaching, job alerts, and progress tracking powered by Google Gemini. The project now supports a multi-step analyzer wizard, persistent dashboards, and commercial licensing.
+>>>>>>> 836fe3c (Replace legacy backend with AI Career Copilot stack)
 
-## ✨ Features
+---
 
-- **Upload Resume:** Upload a PDF resume for analysis through the API
-- **Job Description Matching:** Provide the job description to evaluate how well the resume aligns with the role
-- **Keyword Matching:** The system identifies missing keywords crucial for optimizing the resume for ATS
-- **Profile Summary:** Summarizes the key strengths of the resume and areas for improvement based on the job description
-- **REST API:** FastAPI backend for easy integration with frontend applications
-- **Modular Architecture:** Well-organized codebase for easy maintenance and extension
-- **Comprehensive Documentation:** Interactive API documentation with Swagger UI
-
-## 🛠️ Technologies Used
-
-### Backend API
-- **FastAPI**: High-performance API framework with automatic OpenAPI documentation
-- **Uvicorn**: ASGI server for serving the FastAPI application
-- **Pydantic**: Data validation and settings management
-- **Python-Multipart**: Handling file uploads and form data
-
-### AI & Processing
-- **Google Generative AI**: Gemini 1.5 Flash model for intelligent resume analysis
-- **PyPDF2**: PDF parsing and text extraction
-
-### Development & Testing
-- **pytest**: Comprehensive testing framework
-- **pytest-mock**: Mocking framework for unit tests
-- **httpx**: HTTP client for API testing
-- **python-dotenv**: Environment variable management
-- **Modular Architecture**: Clean separation of concerns with a well-structured codebase
-
-## 🚀 Installation
-
-### Prerequisites
-Ensure you have Python 3.12+ installed on your machine. Then, clone the repository and set up the environment using the provided setup script.
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/austinLorenzMccoy/Smart_ATS_LLM_app.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd -Smart_ATS_LLM_app
-   ```
-
-3. Run the setup script to create a virtual environment and install dependencies:
-
-   ```bash
-   chmod +x setup.sh  # Make the script executable if needed
-   ./setup.sh
-   ```
-
-4. Activate the virtual environment:
-
-   ```bash
-   source atsLLMapp2_env/bin/activate  # On Windows: .\atsLLMapp2_env\Scripts\activate
-   ```
-
-### Environment Setup
-Create a `.env` file in the project root directory and add your Google API key:
-
-```bash
-GOOGLE_API_KEY=your_google_api_key
-```
-
-### Running the API
-
-To start the FastAPI server:
-
-```bash
-python api.py
-```
-
-The API will be available at `http://localhost:8000` with interactive documentation at `http://localhost:8000/docs`
-
-## 📚 API Documentation
-
-### Endpoints
-
-#### GET /
-- **Description**: Welcome endpoint
-- **Response**: Simple welcome message
-- **Example**:
-  ```bash
-  curl -X GET "http://localhost:8000/"
-  ```
-
-#### POST /analyze
-- **Description**: Analyze a resume against a job description
-- **Request**:
-  - `job_description` (form field): The job description text
-  - `resume` (file upload): The resume PDF file
-- **Response**: JSON with the following fields:
-  - `jd_match`: Percentage match with the job description
-  - `missing_keywords`: List of keywords from the job description not found in the resume
-  - `profile_summary`: Summary of the candidate's profile and suggestions
-- **Example**:
-  ```bash
-  curl -X POST "http://localhost:8000/analyze" \
-    -H "accept: application/json" \
-    -F "job_description=Software Engineer with 5+ years of Python experience" \
-    -F "resume=@/path/to/your/resume.pdf"
-  ```
-
-### Interactive Documentation
-
-FastAPI provides interactive API documentation:
-
-- **Swagger UI**: Visit `http://localhost:8000/docs` for an interactive interface to test the API
-- **ReDoc**: Visit `http://localhost:8000/redoc` for alternative documentation
-
-### Response Example
-
-```json
-{
-  "jd_match": "85%",
-  "missing_keywords": ["Docker", "Kubernetes", "CI/CD"],
-  "profile_summary": "Strong Python developer with excellent backend experience. Consider adding more details about containerization and deployment experience."
-}
-```
-
-## 💻 Usage
-
-The API provides a RESTful interface for programmatic access to the resume analysis functionality. You can use tools like curl or any HTTP client to interact with the API.
-
-### Example
-
-```bash
-# Check API status
-curl -X GET "http://localhost:8000/"
-
-# Analyze a resume
-curl -X POST "http://localhost:8000/analyze" \
-  -H "accept: application/json" \
-  -F "job_description=Software Engineer with 5+ years of Python experience" \
-  -F "resume=@/path/to/your/resume.pdf"
-```
-
-## Example
-
-Here’s an example of how the app generates responses:
-
-```
-{
-   "JD Match": "85%",
-   "MissingKeywords": ["Python", "Data Science", "Machine Learning"],
-   "Profile Summary": "The resume is strong in software engineering but lacks significant keywords related to data science..."
-}
-```
-
-## 📚 Project Structure
+## 📦 Monorepo Structure
 
 ```
 .
-├── api.py                  # API entry point for FastAPI backend
-├── requirements.txt        # Project dependencies
-├── setup.sh               # Environment setup script
-├── pytest.ini             # Pytest configuration
-├── .env                    # Environment variables (not in repo)
-├── .gitignore              # Git ignore file
-├── README.md               # Project documentation
-├── src/                    # Source code directory
-│   ├── __init__.py         # Package initialization
-│   ├── api/                # API module
-│   │   ├── __init__.py
-│   │   └── api.py          # FastAPI implementation
-│   ├── config/             # Configuration module
-│   │   ├── __init__.py
-│   │   └── config.py       # Environment and configuration management
-│   ├── models/             # AI models module
-│   │   ├── __init__.py
-│   │   └── gemini.py       # Google Gemini AI integration
-│   └── utils/              # Utilities module
-│       ├── __init__.py
-│       ├── pdf_utils.py    # PDF processing utilities
-│       └── prompts.py      # AI prompt templates
-└── tests/                  # Test directory
-    ├── test_api.py         # API tests
-    ├── test_config.py      # Configuration tests
-    ├── test_gemini.py      # AI model tests
-    ├── test_pdf_utils.py   # PDF utility tests
-    └── test_prompts.py     # Prompt template tests
+├── backend/
+│   ├── src/
+│   │   ├── api/api.py            # FastAPI application with 20+ endpoints
+│   │   ├── models/gemini.py      # Gemini model wrappers
+│   │   └── utils/prompts.py      # Prompt builders for all features
+│   ├── requirements.txt
+│   └── tests/
+│       ├── test_api.py
+│       ├── test_prompts.py
+│       └── ...
+├── frontend/
+│   └── smart-ats-ui/
+│       ├── app/
+│       │   ├── dashboard/
+│       │   │   ├── page.tsx          # Dashboard home
+│       │   │   ├── analyzer/page.tsx # 5-step wizard (new)
+│       │   │   ├── analyze/page.tsx  # Legacy single-page analyzer
+│       │   │   ├── coach/page.tsx    # Career coach chat
+│       │   │   └── jobs/page.tsx     # Job alerts & tracker
+│       │   └── page.tsx              # Landing page
+│       ├── components/
+│       │   ├── analyzer/
+│       │   ├── dashboard/
+│       │   ├── jobs/
+│       │   └── visualizations/
+│       ├── store/useCareerCopilotStore.ts  # Zustand persistence
+│       ├── package.json
+│       └── pnpm-lock.yaml
+├── LICENSE-commercial
+├── README.md (this file)
+└── .gitignore
 ```
 
-## 💯 Testing
+---
 
-The project includes comprehensive tests for all components. To run the tests:
+## ✨ Feature Overview
+
+### Backend API (FastAPI)
+- 20+ endpoints covering resume intelligence, coaching, job insights, analytics, and progress tracking
+- Google Gemini integration with structured prompt outputs
+- PDF parsing, ATS simulation, orchestration planning, knowledge graph prompts, and more
+- Test suite with pytest + httpx
+
+### Frontend App (Next.js + shadcn/ui)
+- **Analyzer Wizard**: 5-step guided flow with resume upload, job description, module selection, progress, and results
+- **Results Dashboard**: Tabbed interface with Recharts visualizations (skill heatmap, keyword cloud, radar)
+- **Career Coach**: Persistent chat with suggested prompts and resume context
+- **Job Search Hub**: AI job alerts, application tracker, saved searches
+- **Dashboard Home**: Quick actions, live stats, recent activity, progress tracker
+- Zustand store for cross-page persistence (analysis history, job data, coach conversation)
+
+---
+
+## 🔐 Licensing
+
+- The project ships with a **commercial license** (`LICENSE-commercial`).
+- Contact the maintainers to obtain rights for redistribution or resale.
+- Open-source dependencies retain their respective licenses.
+
+---
+
+## ⚙️ Environment Setup
+
+### Backend (FastAPI)
 
 ```bash
-# Activate the virtual environment if not already activated
-source atsLLMapp2_env/bin/activate  # On Windows: .\atsLLMapp2_env\Scripts\activate
+cd backend
+python3 -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
+pip install -r requirements.txt
 
-# Run all tests
+# Configure environment
+cp .env.example .env            # create if needed
+echo "GOOGLE_API_KEY=your_key" >> .env
+
+# Run API
+uvicorn src.api.api:app --reload
+```
+
+The API serves Swagger docs at `http://localhost:8000/docs` and ReDoc at `/redoc`.
+
+### Frontend (Next.js)
+
+```bash
+cd frontend/smart-ats-ui
+pnpm install
+
+# Set API base URL
+echo "NEXT_PUBLIC_API_BASE_URL=http://localhost:8000" >> .env.local
+
+# Start dev server
+pnpm dev
+```
+
+Visit `http://localhost:3000` for the landing page and `/dashboard` for the app.
+
+---
+
+## 📊 Analyzer Wizard Flow
+
+1. **Upload** – PDF drag/drop and/or paste resume text
+2. **Job Description** – paste full JD (min length validation)
+3. **Pick Analyses** – select modules or use quick picks
+4. **Processing** – live progress bar and status updates
+5. **Results** – tabbed insights, overall score badge, before/after comparison, visualizations
+
+Results persist to the dashboard via the Zustand store (`useCareerCopilotStore`).
+
+---
+
+## 📈 Dashboard Metrics & Persistence
+
+`frontend/smart-ats-ui/store/useCareerCopilotStore.ts` stores:
+
+- Aggregate stats (total analyses, average match, skills improved)
+- Recent analyses (for dashboard activity feed)
+- Job applications + saved searches (for job tracker)
+- Career coach conversation history
+
+State persists in localStorage so browser refreshes keep context.
+
+---
+
+## 🧪 Testing
+
+### Backend
+
+```bash
+cd backend
+source venv/bin/activate
 python -m pytest
-
-# Run tests with verbose output
-python -m pytest -v
-
-# Run specific test file
-python -m pytest tests/test_api.py
 ```
 
-The test suite covers:
-- API endpoints functionality
-- Configuration loading
-- Google Gemini AI integration
-- PDF text extraction
-- Prompt template generation
+### Frontend
 
-To run tests with coverage report:
+Add React Testing Library / Playwright suites as needed. Current focus is on end-to-end flows once backend endpoints are stable.
+
+---
+
+## ♻️ Git Workflow & Ignore Rules
+
+`.gitignore` has been updated to exclude:
+
+- Python venvs (`venv/`, `.venv/`, etc.)
+- Next.js build artifacts (`.next/`, `node_modules/`)
+- Environment files (`backend/.env`, `frontend/.env.local`)
+- Logs, coverage reports, temporary assets
+
+Before committing:
 
 ```bash
-python -m pytest --cov=src tests/
+git status
 ```
 
-## 📈 API Documentation
+Ensure only relevant source changes are staged.
 
-When the FastAPI server is running, you can access the interactive API documentation:
+---
 
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+## 🚀 Deployment Notes
 
-## 🔧 Environment Management
+- Backend can be containerized with Uvicorn/Gunicorn for cloud deployment (AWS, GCP, Azure).
+- Frontend supports Next.js static export or server rendering. Configure `NEXT_PUBLIC_API_BASE_URL` accordingly.
+- Add CI/CD pipelines to run backend tests and lint frontend before deploys.
 
-The project includes a `setup.sh` script that handles environment setup:
+---
 
-- Removes any existing virtual environment directory
-- Creates a new Python virtual environment
-- Installs all required dependencies from `requirements.txt`
-- Installs additional development dependencies for testing
+## 📄 Legal
 
-This ensures a clean, consistent environment for development and testing.
+- Commercial usage governed by `LICENSE-commercial`.
+- Evaluate third-party API terms (Google Gemini) before production use.
+- Do not commit API keys or customer data.
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create your feature branch: `git checkout -b feature/awesome`
+3. Commit changes with context-rich messages
+4. Run backend tests and lint frontend
+5. Open a pull request detailing changes and testing steps
 
-## 👏 Acknowledgements
+---
 
-Special thanks to:
+## 📞 Support
 
-- [Streamlit](https://streamlit.io/) for the interactive web UI framework
-- [FastAPI](https://fastapi.tiangolo.com/) for the high-performance API framework
-- [Google Generative AI](https://ai.google.dev/) for the powerful Gemini model
-- [PyPDF2](https://pypdf2.readthedocs.io/) for PDF processing capabilities
-- All the open-source contributors who make these tools possible
+For licensing, enterprise support, or feature requests, contact the maintainers with project context and timelines.
 
-## 🔒 License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
+Enjoy building with AI Career Copilot! 🌟

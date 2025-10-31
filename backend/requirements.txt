@@ -1,0 +1,33 @@
+# API - using versions compatible with Python 3.12
+fastapi==0.109.0
+uvicorn==0.27.0
+python-multipart==0.0.6
+# Use pydantic v2 for Python 3.12 compatibility
+pydantic==2.5.3
+
+# Core dependencies
+PyPDF2==2.10.5
+google-generativeai==0.3.1
+python-dotenv==0.19.2
+
+# Testing
+pytest==6.2.5
+pytest-mock==3.6.1
+httpx==0.26.0
+
+# Updated for Python 3.12 compatibility
+typing-extensions==4.9.0
+annotated-types==0.6.0
+# Use starlette version compatible with FastAPI 0.109.0
+starlette==0.35.1
+
+# Explicitly specify these to avoid newer versions that might require Rust
+idna==3.3
+requests==2.27.1
+urllib3==1.26.9
+
+# Additional explicit dependencies to avoid conflicts
+click==8.0.4
+asgiref==3.4.1
+jinja2==3.0.3
+markupsafe==2.0.1

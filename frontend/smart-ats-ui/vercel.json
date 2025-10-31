@@ -1,0 +1,25 @@
+{
+  "version": 3,
+  "framework": "nextjs",
+  "buildCommand": "pnpm install && pnpm build",
+  "outputDirectory": ".next",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "http://localhost:8000/$1"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_API_BASE_URL": "https://your-backend-domain.com"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}
