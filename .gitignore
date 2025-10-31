@@ -45,6 +45,8 @@ frontend/smart-ats-ui/.pnpm-store/
 frontend/smart-ats-ui/pnpm-lock.yaml.backup
 frontend/smart-ats-ui/out/
 frontend/smart-ats-ui/.vercel/
+!frontend/smart-ats-ui/lib/
+!frontend/smart-ats-ui/lib/utils.ts
 
 # Build / dist outputs
 docs/
