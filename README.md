@@ -1,10 +1,6 @@
 <div align="center">
 
-<<<<<<< HEAD
-# 🚀 Smart ATS API
-=======
 # 🚀 AI Career Copilot
->>>>>>> 836fe3c (Replace legacy backend with AI Career Copilot stack)
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688)](https://fastapi.tiangolo.com/)
@@ -19,11 +15,7 @@
 
 </div>
 
-<<<<<<< HEAD
-Smart ATS API is a powerful backend service designed to evaluate resumes against job descriptions using Google's Generative AI. The API simulates an Application Tracking System (ATS) and provides comprehensive insights into how well a resume aligns with a job description by analyzing keywords, content relevance, and generating tailored improvement recommendations.
-=======
 AI Career Copilot combines a FastAPI backend with a Next.js frontend to deliver resume rewriting, skill-gap analysis, role-fit scoring, career coaching, job alerts, and progress tracking powered by Google Gemini. The project now supports a multi-step analyzer wizard, persistent dashboards, and commercial licensing.
->>>>>>> 836fe3c (Replace legacy backend with AI Career Copilot stack)
 
 ---
 
